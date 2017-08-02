@@ -4,7 +4,7 @@
   "description": "zaih fenda zpanel",
   "main": " ",
   "scripts": {
-    "production": "cross-env NODE_ENV=production node app",
+    "production": "rm -rf public & gulp dev & cross-env NODE_ENV=production supervisor -i public app",
     "start": "rm -rf public & gulp dev & cross-env NODE_ENV=dev supervisor -i public app"
   },
   "keywords": [

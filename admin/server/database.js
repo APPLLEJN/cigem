@@ -3,6 +3,8 @@
  */
 var knex = require('knex')
 
+var IS_DEV = process.env.NODE_ENV === 'dev'
+
 const db = knex({
   client: 'mysql',
   connection: {
@@ -10,7 +12,7 @@ const db = knex({
     port: 3306,
     user: 'root',
     password: '1q2w3e4r',
-    database: 'cigem',
+    database: IS_DEV ? 'test' : 'cigem',
   },
   pool: {
     min: 5,
